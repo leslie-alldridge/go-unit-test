@@ -12,6 +12,11 @@ type Test2 struct {
 	out bool
 }
 
+type Test3 struct {
+	in  string
+	out int
+}
+
 var tests = []Test{
 	{"leslie", "that is my name"},
 	{"roy", "guess again"},
@@ -24,6 +29,12 @@ var tests2 = []Test2{
 	{"abcd@gmail-yahoo.com", true},
 	{"abcd@gmailyahoo", true},
 	{"abcd@gmail.yahoo", true},
+}
+
+var tests3 = []Test{
+	{"leslie", 26},
+	{"roy", 22},
+	{"bob", 21},
 }
 
 func TestName(t *testing.T) {
@@ -40,6 +51,15 @@ func TestEmail(t *testing.T) {
 		email := Email(test2.in)
 		if email != test2.out {
 			t.Errorf("#%d: Email(%s)=%v; want %v", i, test2.in, email, test2.out)
+		}
+	}
+}
+
+func TestGetAge(t *testing.T) {
+	for i, test3 := range tests3 {
+		getage := GetAge(test3.in)
+		if getage != test3.out {
+			t.Errorf("#%d: GetAge(%s)=%d; want %d", i, test3.in, getage, test3.out)
 		}
 	}
 }
