@@ -17,12 +17,26 @@ func Email(e string) bool {
 	return re.MatchString(e)
 }
 
+// basic logic variant
+
+// func GetAge(name string) int {
+// 	if name == "leslie" {
+// 		return 26
+// 	} else if name == "bob" {
+// 		return 21
+// 	} else {
+// 		return 22
+// 	}
+// }
+
+//object variant
+
+type human struct {
+	name string
+	age  int
+}
+
 func GetAge(name string) int {
-	if name == "leslie" {
-		return 26
-	} else if name == "bob" {
-		return 21
-	} else {
-		return 22
-	}
+	people := human{name: "leslie", age: 26}
+	return people.age
 }

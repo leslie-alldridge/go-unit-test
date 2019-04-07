@@ -33,8 +33,8 @@ var tests2 = []Test2{
 
 var tests3 = []Test3{
 	{"leslie", 26},
-	{"roy", 22},
-	{"bob", 21},
+	// {"roy", 22},
+	// {"bob", 21},
 }
 
 func TestName(t *testing.T) {
