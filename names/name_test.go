@@ -31,7 +31,7 @@ var tests2 = []Test2{
 	{"abcd@gmail.yahoo", true},
 }
 
-var tests3 = []Test{
+var tests3 = []Test3{
 	{"leslie", 26},
 	{"roy", 22},
 	{"bob", 21},
@@ -41,7 +41,7 @@ func TestName(t *testing.T) {
 	for i, test := range tests {
 		name := Name(test.in)
 		if name != test.out {
-			t.Errorf("#%d: Name(%s)=%s; want %s", i, test.in, name, test.out)
+			t.Errorf("#%d: Name(%s)=%v; want %v", i, test.in, name, test.out)
 		}
 	}
 }
