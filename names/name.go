@@ -40,3 +40,8 @@ func GetAge(name string) int {
 	people := human{name: "leslie", age: 26}
 	return people.age
 }
+
+// array of object variant
+// func GetAge(name string) int {
+
+// }
