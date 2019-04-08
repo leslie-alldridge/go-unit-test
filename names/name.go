@@ -36,12 +36,21 @@ type human struct {
 	age  int
 }
 
-func GetAge(name string) int {
-	people := human{name: "leslie", age: 26}
-	return people.age
-}
+// func GetAge(name string) int {
+// 	people := human{name: "leslie", age: 26}
+// 	return people.age
+// }
 
 // array of object variant
-// func GetAge(name string) int {
-
-// }
+func GetAge(name string) int {
+	var people []human
+	people[0] = human{name: "leslie", age: 26}
+	people[1] = human{name: "luke", age: 22}
+	var age = 0
+	for i := range people {
+		if people[i].name == "luke" {
+			age = people[i].age
+		}
+	}
+	return age
+}
